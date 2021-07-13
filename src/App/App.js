@@ -1,23 +1,22 @@
 //Import react anywhere JSX is used
 import React from 'react';
 import './App.css';
-import Header from '../components/Header';
 import MainContent from '../components/MainContent';
-import Footer from '../components/Footer';
 
-class App extends React.Component {
-  render() {
-    //Component needs to return a single JSX element, multiple elements can be wrapped in one div
-    return (
-      <div className="app">
-        <div className="main">
-          <Header />
-          <MainContent />
-        </div>
-        <Footer />
+function App() {
+  //Component needs to return a single JSX element, multiple elements can be wrapped in one div
+  return (
+    <div className='app'>
+      <div className='flexbox'>
+        <div className='background'></div>
+        <footer> created by ksenia palchikova &copy; 2021 </footer>
       </div>
-    );
-  };
+      <section className='main'>
+        <header className='app-header'>Stuff I need to do:</header>
+        <MainContent />
+      </section>
+    </div>
+  );
 };
 
 export default App;
