@@ -24,17 +24,20 @@ function MainContent() {
   };
 
   function toggleComplete(id) {
-    setTodos(
-      todos.map(todo => {
-        if(todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed
-          };
-        }
-        return todo;
-      })
-    );
+    const newTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed
+        };
+      }
+      return todo;
+    });
+
+    const notCompleted = newTodos.filter(todo => !todo.completed);
+    const completed = newTodos.filter(todo => todo.completed);
+
+    setTodos(notCompleted.concat(completed));
   };
 
   function removeTodo(id) {

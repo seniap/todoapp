@@ -48,7 +48,7 @@ function Todo({todo, toggleComplete, removeTodo, editTodo}) {
   };
 
   return (
-    <div className="todo-item">
+    <div className={todo.completed ? "todo-item completed" : "todo-item"}>
       <div className="task">
         <input type="checkbox" onChange={handleCheckboxClick} checked={todo.completed}/>
         <li>{currentTodo.task}</li>

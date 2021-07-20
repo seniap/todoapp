@@ -108,6 +108,10 @@ input[type=checkbox] {
   margin-right: 10px;
 }
 
+.todo-item.completed li{
+  color: grey;
+  text-decoration: line-through;
+}
 
 /* EDIT TASK */
 .edit-form {
