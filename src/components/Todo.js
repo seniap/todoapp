@@ -1,7 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react';
 
 function Todo({todo, toggleComplete, removeTodo, editTodo}) {
-  const [currentTodo, setCurrentTodo] = useState({...todo, editMode: false});
+  //Destructuring assignment
+  const [editMode, setEditMode] = useState(false);
+  const [currentTodo, setCurrentTodo] = useState(todo);
   const inputEl = useRef(null);
 
   function handleCheckboxClick() {
@@ -13,7 +15,7 @@ function Todo({todo, toggleComplete, removeTodo, editTodo}) {
   };
 
   function handleEditClick() {
-    setCurrentTodo({...currentTodo, editMode: true});
+    setEditMode(true);
   };
 
   function handleInputChange(e) {
@@ -24,17 +26,17 @@ function Todo({todo, toggleComplete, removeTodo, editTodo}) {
     e.preventDefault();
     if (currentTodo.task.trim()) {
       editTodo(currentTodo);
-      setCurrentTodo({...currentTodo, editMode: false});
+      setEditMode(false);
     }
   };
 
   useEffect(() => {
-    if (currentTodo.editMode) {
+    if (editMode) {
       inputEl.current.focus();
     }
-  }, [currentTodo.editMode]);
+  }, [editMode]);
 
-  if (currentTodo.editMode) {
+  if (editMode) {
     return (
       <div className="todo-item">
         <form className="edit-form" onSubmit={handleSubmit} onBlur={handleSubmit} >
