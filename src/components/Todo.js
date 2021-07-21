@@ -51,6 +51,7 @@ function Todo({todo, toggleComplete, removeTodo, editTodo}) {
     <div className={todo.completed ? "todo-item completed" : "todo-item"}>
       <div className="task">
         <input type="checkbox" onChange={handleCheckboxClick} checked={todo.completed}/>
+        <span className="checkmark"></span>
         <li>{currentTodo.task}</li>
       </div>
       <div className="buttons">
