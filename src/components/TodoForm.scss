@@ -1,0 +1,33 @@
+@import '../App/variables';
+
+.todo-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border-bottom: 1px solid $border-color;
+
+  input {
+    padding: 0 10px;
+    outline: none;
+    border-style: none;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .add-btn {
+    background-image: url('../img/add.png');
+    background-size: cover;
+    height: 32px;
+    width: 32px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    background-color: $main-color;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import './variables';
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -67,23 +69,8 @@ h1, .app-header, footer {
   box-sizing: border-box;
 }
 
-.todo-form {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  border-bottom: 1px solid #c2c2c2;
-}
-
-.todo-form input, h1 {
+h1 {
   padding: 0 10px;
-}
-
-.todo-form input {
-  outline: none;
-  border-style: none;
-  width: 100%;
-  font-size: 16px;
-  margin-top: 20px;
 }
 
 .todo-list {
@@ -97,7 +84,7 @@ h1, .app-header, footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 1px solid $border-color;
 }
 
 .task {
@@ -184,32 +171,23 @@ h1, .app-header, footer {
   transform: scale(1.2);
 }
 
-.add-btn:active, .delete-btn:active, .edit-btn:active, .save-btn:active {
+.delete-btn:active, .edit-btn:active, .save-btn:active {
   transform: scale(0.9);
 }
 
-.add-btn, .delete-btn, .edit-btn, .save-btn {
+.delete-btn, .edit-btn, .save-btn {
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 16px;
-  width: 16px;
-  border: none;
-  background-color: white;
-  transition: all 0.2s ease-in-out;
-}
-
-.add-btn {
-  background-image: url('../img/add.png');
   background-size: cover;
   height: 24px;
   width: 24px;
+  border: none;
+  background-color: $main-color;
+  transition: all 0.2s ease-in-out;
 }
 
 .delete-btn {
   background-image: url('../img/delete.ico');
-  margin-right: 20px;
+  margin-right: 24px;
 }
 
 .edit-btn {
