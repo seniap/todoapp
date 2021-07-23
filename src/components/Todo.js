@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import './Todo.scss';
 
 function Todo({todo, toggleComplete, removeTodo, editTodo}) {
   //Destructuring assignment

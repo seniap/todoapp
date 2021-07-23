@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import DateToday from './Date';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
+import './MainContent.scss';
 
 const LOCAL_STORAGE_KEY = 'react-todo-list-todos';
 

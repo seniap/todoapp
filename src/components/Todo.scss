@@ -1,0 +1,123 @@
+@import '../App/variables';
+
+@mixin buttons {
+  cursor: pointer;
+  background-size: cover;
+  height: 24px;
+  width: 24px;
+  border: none;
+  background-color: $main-color;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.todo-item {
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  &.completed {
+    li{
+    color: grey;
+    text-decoration: line-through;
+    }
+  }
+
+  li {
+    display: inline-block;
+    padding-left: 40px;
+  }
+
+  .task {
+    position: relative;
+
+    // Hide default checkbox
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      z-index: 1;
+
+      // Active checkmark color
+      &:checked ~ .checkmark {
+        background-color: #474747;
+      }
+
+      // Checkmark indicator shown
+      &:checked ~ .checkmark:after {
+        display: block;
+      }
+    }
+
+    // Custom checkbox
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 24px;
+      width: 24px;
+      background-color: #eee;
+      cursor: pointer;
+
+      // Checkmark indicator
+      &:after {
+        left: 8px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        // Checkmark indicator hidden
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    }
+  }
+
+  // Edit task
+  .edit-form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .edit-input {
+      font-size: 16px;
+      outline: none;
+      border-style: none;
+    }
+
+    // Save button
+    .save-btn {
+      background-image: url('../img/save.ico');
+      @include buttons;
+    }
+  }
+
+  // Delete and edit buttons
+  .delete-btn {
+    background-image: url('../img/delete.ico');
+    margin-right: 24px;
+    @include buttons;
+  }
+  
+  .edit-btn {
+    background-image: url('../img/edit.ico');
+    @include buttons;
+  }
+}
