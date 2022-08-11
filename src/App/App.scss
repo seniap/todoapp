@@ -19,7 +19,7 @@ body {
 .background {
   height: 100%;
   width: 100%;
-  background-image: url('../temp.jpeg');
+  background-image: url('../workplace_3.0.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -29,7 +29,7 @@ body {
 // Footer
 footer {
   padding: 8px 0 8px 12px;
-  background-color: #1a1a1a;
+  background-color: $content-color;
   font-size: 18px;
   text-align: center;
   font-family: $monospace;

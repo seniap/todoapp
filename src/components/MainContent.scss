@@ -3,7 +3,7 @@
 @mixin main {
   max-width: 560px;
   margin: 0 auto;
-  box-shadow: 10px 10px $secondary-color;
+  box-shadow: 10px 10px $content-color;
 }
 
 .main {
